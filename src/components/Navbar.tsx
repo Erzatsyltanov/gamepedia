@@ -1,0 +1,89 @@
+
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+    <nav className="bg-background border-b border-border py-4 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        <Link to="/" className="flex items-center space-x-2">
+          <span className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">
+            GAMEPEDIA
+          </span>
+        </Link>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-x">
+              <path d="M18 6 6 18"/>
+              <path d="m6 6 12 12"/>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-menu">
+              <line x1="4" x2="20" y1="12" y2="12"/>
+              <line x1="4" x2="20" y1="6" y2="6"/>
+              <line x1="4" x2="20" y1="18" y2="18"/>
+            </svg>
+          )}
+        </button>
+
+        {/* Desktop menu */}
+        <div className="hidden md:flex items-center space-x-6">
+          <Link to="/news" className="text-foreground/80 hover:text-primary transition-colors">
+            Новости
+          </Link>
+          <Link to="/franchises" className="text-foreground/80 hover:text-primary transition-colors">
+            Франшизы
+          </Link>
+          <Link to="/characters" className="text-foreground/80 hover:text-primary transition-colors">
+            Персонажи
+          </Link>
+          <Link to="/consoles" className="text-foreground/80 hover:text-primary transition-colors">
+            Консоли
+          </Link>
+          <Link to="/designers" className="text-foreground/80 hover:text-primary transition-colors">
+            Геймдизайнеры
+          </Link>
+          <Link to="/snake" className="text-foreground/80 hover:text-primary transition-colors">
+            Змейка
+          </Link>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-background border-b border-border">
+          <div className="flex flex-col px-4 pt-2 pb-4 space-y-4">
+            <Link to="/news" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Новости
+            </Link>
+            <Link to="/franchises" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Франшизы
+            </Link>
+            <Link to="/characters" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Персонажи
+            </Link>
+            <Link to="/consoles" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Консоли
+            </Link>
+            <Link to="/designers" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Геймдизайнеры
+            </Link>
+            <Link to="/snake" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Змейка
+            </Link>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;
