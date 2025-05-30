@@ -8,14 +8,14 @@ const characters = [
       id: 1,
       name: "2B",
       game: "NieR: Automata",
-      image: "https://avatars.mds.yandex.net/i?id=a117f35e9aba409740463a5c86d0d5bc9d3de279-5213357-images-thumbs&n=13",
+      image: "https://static1.dualshockersimages.com/wordpress/wp-content/uploads/2022/12/gridart_20221201_135121712.jpg",
       description: "Боевой андроид из YoRHa, главная героиня NieR: Automata, созданная для борьбы с инопланетными машинами."
     },
     {
       id: 2,
       name: "Марио",
       game: "Super Mario",
-      image: "https://example.com/mario.jpg", // Replace with valid image URL
+      image: "https://example.com/mario.jpg", 
       description: "Итальянский сантехник, талисман Nintendo и один из самых узнаваемых персонажей в истории видеоигр."
     },
     {
@@ -29,7 +29,7 @@ const characters = [
       id: 4,
       name: "Соник",
       game: "Sonic the Hedgehog",
-      image: "https://example.com/sonic.jpg", // Replace with valid image URL
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR--ZXro4UcEbpsBlWG0nhLbqmhntfe0HT7g&s", 
       description: "Сверхскоростной синий ёж, талисман SEGA и главный соперник Марио в 90-е годы."
     },
     {
@@ -85,7 +85,7 @@ const characters = [
       id: 12,
       name: "Steve",
       game: "Minecraft",
-      image: "https://example.com/steve.jpg", // Replace with valid image URL
+      image: "https://example.com/steve.jpg", 
       description: "Стандартный персонаж игрока в Minecraft, известный своей способностью выживать и строить практически что угодно."
     },
     {
