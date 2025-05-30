@@ -141,3 +141,4 @@ const Franchises = () => {
 };
 
 export default Franchises;
+
