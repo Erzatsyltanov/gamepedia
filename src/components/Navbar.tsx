@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -11,7 +10,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <span className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">
-            GAMEPEDIA
+            GAMEPULSE
           </span>
         </Link>
 
@@ -52,7 +51,7 @@ const Navbar = () => {
             Геймдизайнеры
           </Link>
           <Link to="/snake" className="text-foreground/80 hover:text-primary transition-colors">
-            Змейка
+            Игры
           </Link>
         </div>
       </div>
@@ -77,7 +76,7 @@ const Navbar = () => {
               Геймдизайнеры
             </Link>
             <Link to="/snake" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
-              Змейка
+              Игры
             </Link>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +9,7 @@ const HeroSection = () => {
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">
-                Gamepedia
+                GamePulse
               </span>
               <span className="block text-2xl md:text-3xl mt-2">Энциклопедия мира видеоигр</span>
             </h1>
