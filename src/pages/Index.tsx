@@ -1,4 +1,4 @@
-```tsx
+
 import HeroSection from '@/components/HeroSection';
 import FeaturedGames from '@/components/FeaturedGames';
 import Navbar from '@/components/Navbar';
@@ -206,7 +206,3 @@ export default Index;
     link: string;
   }
   const NewsCard: React.FC<NewsCardProps> = ({ title, image, date, excerpt, link }) => { ... };
-  ```
-- Check if your IDE (e.g., VSCode) is using the correct TypeScript version and has the project’s `tsconfig.json` loaded.
-
-Let me know if you need further debugging help or additional changes!
