@@ -13,7 +13,8 @@ import SnakeGame from "./pages/SnakeGame";
 import NotFound from "./pages/NotFound";
 import Characters from "./pages/Characters";
 import CharacterDetail from "./pages/CharacterDetail";
-import FranchiseDetail from "./pages/FranchiseDetail"; // Import the new component
+import FranchiseDetail from "./pages/FranchiseDetail";
+import SubmitArticle from "./pages/SubmitArticle";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/designers" element={<Designers />} />
           <Route path="/designers/:id" element={<DesignerDetail />} />
           <Route path="/snake" element={<SnakeGame />} />
+          <Route path="/submit-article" element={<SubmitArticle />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -1,13 +1,13 @@
-
 import HeroSection from '@/components/HeroSection';
 import FeaturedGames from '@/components/FeaturedGames';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import NewsCard from '@/components/NewsCard';
+import { Gamepad2, Users, TrendingUp, Star, ArrowRight, Play, BookOpen, Trophy } from 'lucide-react';
 
-// Define interface for news items
 interface NewsItem {
   id: number;
   title: string;
@@ -23,33 +23,40 @@ const latestNews: NewsItem[] = [
     title: "Stellar Blade стала самой продаваемой игрой 2025 года",
     image: "https://image.api.playstation.com/vulcan/ap/rnd/202309/1219/1c7b75d8ed9271516546560d219ad0b22ee0a263b4537bd8.png",
     date: "25 января 2025",
-    excerpt: "Экшен от Shift Up превзошел все ожидания, продавшись тиражом более 8 миллионов копий за первый месяц. Игра получила высокие оценки критиков и стала настоящим феноменом.",
-    link: ""
+    excerpt: "Экшен от Shift Up превзошел все ожидания, продавшись тиражом более 8 миллионов копий за первый месяц.",
+    link: "/news/stellar-blade-success"
+  },
+  {
+    id: 2,
+    title: "Nintendo Switch 2 официально анонсирована",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR74F-fljhpXasSm4XsIsdMh-TB86LmU2UqPQ&s",
+    date: "20 января 2025",
+    excerpt: "Nintendo представила новую консоль с поддержкой 4K и улучшенной производительностью.",
+    link: "/news/nintendo-switch-2"
+  },
+  {
+    id: 3,
+    title: "GTA VI получила новый трейлер геймплея",
+    image: "https://media.riamo.ru/get_resized/Sk-pjIp3N7ZO5mMLhgnMdmW-AMo=/1920x1080/filters:rs(fill-down):format(webp)/YXJ0aWNsZXMvaW1hZ2UvMjAyNS81L2ltYWdlLnBuZw.webp",
+    date: "15 января 2025",
+    excerpt: "Rockstar Games показала 10 минут геймплея долгожданной GTA VI.",
+    link: "/news/gta-vi-gameplay"
   },
   {
     id: 4,
-    title: "Новый патч для Elden Ring добавляет кооперативный режим",
-    image: "https://image.api.playstation.com/vulcan/ap/rnd/202106/1719/1bY1hJlr0oz0oG4SW28e1M8x.png",
-    date: "10 февраля 2025",
-    excerpt: "FromSoftware выпустила обновление для Elden Ring, добавляющее долгожданный кооперативный режим для совместного прохождения подземелий.",
-    link: ""
-  },
-  {
-    id: 5,
-    title: "Cyberpunk 2077: сиквел в разработке",
-    image: "https://image.api.playstation.com/vulcan/ap/rnd/202008/2515/8JZdJ2nZ3xQJy5j69M3F5e9F.png",
-    date: "5 февраля 2025",
-    excerpt: "CD Projekt Red подтвердила начало разработки продолжения Cyberpunk 2077. Ожидается более глубокая RPG-механика и улучшенная графика.",
-    link: ""
-  },
-  {
-    id: 6,
-    title: "Valve анонсировала Half-Life 3",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3z3f3z3f3z3f3z3f3z3f3z3f3z3f3z3f3z3&s",
-    date: "1 февраля 2025",
-    excerpt: "После долгих лет ожиданий Valve официально подтвердила разработку Half-Life 3 с использованием нового движка Source 3.",
-    link: ""
+    title: "The Elder Scrolls VI показали первый геймплей",
+    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2623190/67e60b0125feb2f0cc6964f0acb785faf1207fbd/capsule_616x353.jpg?t=1745345472",
+    date: "8 января 2025",
+    excerpt: "Bethesda наконец показала геймплей долгожданной The Elder Scrolls VI.",
+    link: "/news/elder-scrolls-vi"
   }
+];
+
+const stats = [
+  { icon: Gamepad2, label: "Игровых франшиз", value: "15+" },
+  { icon: Users, label: "Персонажей", value: "50+" },
+  { icon: BookOpen, label: "Статей", value: "200+" },
+  { icon: Trophy, label: "Геймдизайнеров", value: "10+" }
 ];
 
 const Index: React.FC = () => {
@@ -58,17 +65,94 @@ const Index: React.FC = () => {
       <Navbar />
 
       <main className="flex-grow">
-        <HeroSection />
+        {/* Hero Section */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-20 md:py-32">
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="container mx-auto px-4 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                    <Star className="w-4 h-4 mr-2" />
+                    Энциклопедия мира видеоигр
+                  </div>
+                  <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                    <span className="bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text">
+                      GamePulse
+                    </span>
+                    <br />
+                    <span className="text-foreground">Ваш гид в мире игр</span>
+                  </h1>
+                  <p className="text-xl text-muted-foreground max-w-lg">
+                    Откройте для себя увлекательные истории, персонажей и вселенные ваших любимых видеоигр. 
+                    Присоединяйтесь к сообществу геймеров и делитесь своими знаниями.
+                  </p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 text-white">
+                    <Link to="/franchises">
+                      <Gamepad2 className="w-5 h-5 mr-2" />
+                      Исследовать игры
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="lg">
+                    <Link to="/submit-article">
+                      <BookOpen className="w-5 h-5 mr-2" />
+                      Добавить статью
+                    </Link>
+                  </Button>
+                </div>
 
+                {/* Stats */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
+                  {stats.map((stat, index) => (
+                    <div key={index} className="text-center">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-2">
+                        <stat.icon className="w-6 h-6" />
+                      </div>
+                      <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                      <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl border border-border bg-gradient-to-br from-purple-900/20 to-blue-900/20 p-8">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
+                    {['Final Fantasy', 'Zelda', 'Mario', 'Sonic', 'Halo', 'GTA'].map((game, i) => (
+                      <div key={i} className="bg-background/40 backdrop-blur-sm rounded-lg p-4 flex items-center justify-center text-center text-sm font-medium hover:bg-primary/20 transition-colors cursor-pointer">
+                        {game}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Decorative elements */}
+                <div className="absolute -top-20 -right-20 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Games */}
         <FeaturedGames />
 
-        {/* Latest News Section */}
-        <section className="py-12 md:py-16 bg-secondary/25">
+        {/* Latest News */}
+        <section className="py-16 bg-secondary/25">
           <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold">Последние новости</h2>
+            <div className="flex items-center justify-between mb-12">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Последние новости</h2>
+                <p className="text-muted-foreground text-lg">Самые свежие события из мира видеоигр</p>
+              </div>
               <Button variant="outline" asChild>
-                <Link to="/news">Все новости</Link>
+                <Link to="/news">
+                  Все новости
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
               </Button>
             </div>
 
@@ -87,94 +171,88 @@ const Index: React.FC = () => {
           </div>
         </section>
 
-        {/* About GamePulse Section */}
-        <section className="py-12 md:py-16 bg-background">
+        {/* Community Section */}
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">О GamePulse</h2>
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-lg text-muted-foreground mb-6">
-                GamePulse — это ваш главный источник новостей, обзоров и историй из мира видеоигр. Мы стремимся предоставлять самую актуальную информацию о новинках игровой индустрии, глубокие аналитические статьи и захватывающие рассказы о персонажах и вселенных.
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Присоединяйтесь к сообществу</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                GamePulse — это не просто энциклопедия, это живое сообщество геймеров, 
+                где каждый может поделиться своими знаниями и открытиями.
               </p>
-              <p className="text-lg text-muted-foreground mb-6">
-                Наша миссия — объединить сообщество геймеров, предоставляя платформу, где каждый может найти что-то для себя: от новостей о грядущих релизах до рейтингов лучших игр по версии критиков и игроков.
-              </p>
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                <Link to="/about">Узнать больше</Link>
-              </Button>
             </div>
-          </div>
-        </section>
 
-        {/* Features Section */}
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">На GamePulse вы найдёте</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+                <CardContent className="space-y-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+                    <BookOpen className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Создавайте статьи</h3>
+                  <p className="text-muted-foreground">
+                    Поделитесь своими знаниями об играх, персонажах и игровых вселенных
+                  </p>
+                  <Button asChild variant="outline">
+                    <Link to="/submit-article">Написать статью</Link>
+                  </Button>
+                </CardContent>
+              </Card>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              <div className="bg-secondary/25 rounded-lg p-6 hover:bg-secondary/40 transition-colors">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
-                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Подробные статьи</h3>
-                <p className="text-muted-foreground">О популярных играх всех жанров и платформ</p>
-              </div>
+              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+                <CardContent className="space-y-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Обсуждайте</h3>
+                  <p className="text-muted-foreground">
+                    Участвуйте в дискуссиях и делитесь мнениями с другими геймерами
+                  </p>
+                  <Button asChild variant="outline">
+                    <Link to="/community">Присоединиться</Link>
+                  </Button>
+                </CardContent>
+              </Card>
 
-              <div className="bg-secondary/25 rounded-lg p-6 hover:bg-secondary/40 transition-colors">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M20 7h-9"/>
-                    <path d="M14 17H5"/>
-                    <circle cx="17" cy="17" r="3"/>
-                    <circle cx="7" cy="7" r="3"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Истории персонажей</h3>
-                <p className="text-muted-foreground">Биографии героев, вселенных и фракций</p>
-              </div>
-
-              <div className="bg-secondary/25 rounded-lg p-6 hover:bg-secondary/40 transition-colors">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M19 5v14H5V5h14Z"/>
-                    <path d="M9 5v14"/>
-                    <path d="M5 9h14"/>
-                    <path d="M5 19h14"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Новости индустрии</h3>
-                <p className="text-muted-foreground">Актуальная информация о мире игр</p>
-              </div>
-
-              <div className="bg-secondary/25 rounded-lg p-6 hover:bg-secondary/40 transition-colors">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
-                    <path d="M8.5 8.5v.01"/>
-                    <path d="M16 15.5v.01"/>
-                    <path d="M12 12v.01"/>
-                    <path d="M11 17v.01"/>
-                    <path d="M7 14v.01"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Рейтинг игр</h3>
-                <p className="text-muted-foreground">По мнению сообщества и критиков</p>
-              </div>
+              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+                <CardContent className="space-y-4">
+                  <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center">
+                    <TrendingUp className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold">Следите за трендами</h3>
+                  <p className="text-muted-foreground">
+                    Будьте в курсе последних новостей и тенденций игровой индустрии
+                  </p>
+                  <Button asChild variant="outline">
+                    <Link to="/news">Читать новости</Link>
+                  </Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
         {/* Call to Action */}
-        <section className="py-12 md:py-16 bg-gradient-to-r from-purple-900/20 to-blue-900/20">
+        <section className="py-16 bg-gradient-to-r from-purple-900/20 to-blue-900/20">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">
-              GamePulse — потому что каждая игра заслуживает свою страницу
-            </h2>
-            <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90">
-              <Link to="/franchises">Исследовать видеоигры</Link>
-            </Button>
+            <div className="max-w-3xl mx-auto space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold">
+                GamePulse — потому что каждая игра заслуживает свою страницу
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Откройте для себя удивительный мир видеоигр вместе с нами
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90">
+                  <Link to="/franchises">
+                    <Play className="w-5 h-5 mr-2" />
+                    Начать исследование
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/about">Узнать больше</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -185,24 +263,3 @@ const Index: React.FC = () => {
 };
 
 export default Index;
-```
-
-**Changes Made**:
-- Removed the GTA VI and Nintendo Switch 2 news articles, keeping the four remaining articles.
-- Added a `NewsItem` interface to type the `latestNews` array for TypeScript.
-- Typed the `Index` component as `React.FC` for proper TypeScript support.
-- Adjusted the grid layout to `grid-cols-1 md:grid-cols-2 lg:grid-cols-4` for better responsiveness with four news items.
-- Changed the file extension to `.tsx` in the artifact metadata.
-
-**Next Steps for Error Resolution**:
-- If you're still seeing errors, please share the specific error message from your editor or build tool (e.g., Vite, Webpack, or `tsc`).
-- Verify that `NewsCard` accepts props matching the `NewsItem` interface. For example, ensure `NewsCard` is typed like:
-  ```tsx
-  interface NewsCardProps {
-    title: string;
-    image: string;
-    date: string;
-    excerpt: string;
-    link: string;
-  }
-  const NewsCard: React.FC<NewsCardProps> = ({ title, image, date, excerpt, link }) => { ... };

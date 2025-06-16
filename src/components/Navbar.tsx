@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { PlusCircle } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,6 +54,12 @@ const Navbar = () => {
           <Link to="/snake" className="text-foreground/80 hover:text-primary transition-colors">
             Игры
           </Link>
+          <Button asChild size="sm" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90">
+            <Link to="/submit-article">
+              <PlusCircle className="w-4 h-4 mr-2" />
+              Добавить статью
+            </Link>
+          </Button>
         </div>
       </div>
 
@@ -78,6 +85,12 @@ const Navbar = () => {
             <Link to="/snake" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
               Игры
             </Link>
+            <Button asChild size="sm" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 w-fit" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/submit-article">
+                <PlusCircle className="w-4 h-4 mr-2" />
+                Добавить статью
+              </Link>
+            </Button>
           </div>
         </div>
       )}

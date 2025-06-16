@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 
-const GameCard = ({ title, image, description, link }) => {
+interface GameCardProps {
+  title: string;
+  image: string;
+  description: string;
+  link: string;
+}
+
+const GameCard: React.FC<GameCardProps> = ({ title, image, description, link }) => {
   return (
     <Link to={link} className="block group">
       <Card className="overflow-hidden transition-all border-border hover:shadow-md hover:shadow-primary/20 hover:border-primary/50">

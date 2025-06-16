@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Book, Info, Newspaper } from 'lucide-react';
 
@@ -10,7 +9,7 @@ interface NewsCardProps {
   link: string;
 }
 
-const NewsCard = ({ title, image, date, excerpt, link }: NewsCardProps) => {
+const NewsCard: React.FC<NewsCardProps> = ({ title, image, date, excerpt, link }) => {
   return (
     <Link to={link} className="news-card block hover:scale-105 transition-transform">
       <div className="aspect-video bg-muted overflow-hidden relative rounded-md">
