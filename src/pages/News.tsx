@@ -15,43 +15,35 @@ const newsItems = [
   },
   {
     id: 2,
-    title: "Nintendo Switch 2 официально анонсирована",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR74F-fljhpXasSm4XsIsdMh-TB86LmU2UqPQ&s",
+    title: "The Witcher 4: CD Projekt RED продемонстрировала техническую демо-версию",
+    image: "https://cdn.mos.cms.futurecdn.net/8gzcr6RpTN9TEyHVAM9eeF.jpg",
     date: "20 января 2025",
-    excerpt: "Nintendo представила новую консоль с поддержкой 4K и улучшенной производительностью. Релиз запланирован на конец 2025 года.",
-    link: "/news/nintendo-switch-2-announced"
+    excerpt: "CD Projekt RED показала впечатляющую техническую демонстрацию новой части The Witcher на движке Unreal Engine 5.",
+    link: "/news/witcher-4-tech-demo"
   },
   {
     id: 3,
-    title: "GTA VI получила новый трейлер геймплея",
-    image: "https://media.riamo.ru/get_resized/Sk-pjIp3N7ZO5mMLhgnMdmW-AMo=/1920x1080/filters:rs(fill-down):format(webp)/YXJ0aWNsZXMvaW1hZ2UvMjAyNS81L2ltYWdlLnBuZw.webp",
-    date: "15 января 2025",
-    excerpt: "Rockstar Games показала 10 минут геймплея долгожданной GTA VI. Релиз по-прежнему запланирован на 2026 год.",
-    link: "/news/gta-vi-gameplay-trailer"
+    title: "Sony и PlayStation: Sony сняла региональные ограничения для некоторых игр",
+    image: "https://gmedia.playstation.com/is/image/SIEPDC/ps5-console-white-front-view-01-en-14sep21?$native--t$",
+    date: "18 января 2025",
+    excerpt: "Sony Interactive Entertainment объявила о снятии региональных ограничений для ряда игр в PlayStation Store.",
+    link: "/news/sony-regional-restrictions"
   },
   {
     id: 4,
-    title: "Assassin's Creed Shadows получила дату релиза",
-    image: "https://cms-assets.xboxservices.com/assets/f7/75/f7759371-ffd8-429c-b858-e3e3242fa547.jpg?n=343859994_GLP-Page-Hero-1084_1920x1080.jpg",
-    date: "12 января 2025",
-    excerpt: "Ubisoft объявила, что новая часть серии выйдет 14 февраля 2025 года. Игра перенесет игроков в феодальную Японию.",
-    link: "/news/assassins-creed-shadows-release-date"
+    title: "MindsEye: Шпионский экшен MindsEye получил негативные отзывы",
+    image: "https://cdn.cloudflare.steamstatic.com/steam/apps/1234567/header.jpg",
+    date: "15 января 2025",
+    excerpt: "Долгожданный шпионский экшен MindsEye разочаровал критиков и игроков техническими проблемами и слабым геймплеем.",
+    link: "/news/mindseye-negative-reviews"
   },
   {
     id: 5,
-    title: "The Elder Scrolls VI показали первый геймплей",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2623190/67e60b0125feb2f0cc6964f0acb785faf1207fbd/capsule_616x353.jpg?t=1745345472",
-    date: "8 января 2025",
-    excerpt: "Bethesda наконец показала геймплей долгожданной The Elder Scrolls VI на Game Awards 2024. Релиз ожидается в 2027 году.",
-    link: "/news/elder-scrolls-vi-gameplay"
-  },
-  {
-    id: 6,
-    title: "DOOM: The Dark Ages анонсирован на QuakeCon",
-    image: "https://image.api.playstation.com/vulcan/ap/rnd/202501/1405/bb3f89ae3425f3aa86041ff71646fc5d44d7705f3a383427.jpg",
-    date: "5 января 2025",
-    excerpt: "id Software представила новую часть культовой серии шутеров. Действие игры развернется в альтернативном средневековье.",
-    link: "/news/doom-dark-ages-announced"
+    title: "Clair Obscur: Expedition 33: Ролевая игра от Sandfall Interactive продала миллион копий за три дня",
+    image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2345678/header.jpg",
+    date: "12 января 2025",
+    excerpt: "Французская студия Sandfall Interactive празднует невероятный успех своей дебютной RPG, которая получила высокие оценки критиков.",
+    link: "/news/clair-obscur-expedition-33-success"
   }
 ];
 
@@ -98,8 +90,8 @@ const News = () => {
                       <div className="text-sm text-muted-foreground">В чартах</div>
                     </div>
                   </div>
-                  <Button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 w-fit">
-                    Читать подробнее
+                  <Button className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 w-fit" asChild>
+                    <a href="/news/stellar-blade-success">Читать подробнее</a>
                   </Button>
                 </div>
               </div>

@@ -28,27 +28,27 @@ const latestNews: NewsItem[] = [
   },
   {
     id: 2,
-    title: "Nintendo Switch 2 официально анонсирована",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR74F-fljhpXasSm4XsIsdMh-TB86LmU2UqPQ&s",
+    title: "The Witcher 4: CD Projekt RED продемонстрировала техническую демо-версию",
+    image: "https://cdn.mos.cms.futurecdn.net/8gzcr6RpTN9TEyHVAM9eeF.jpg",
     date: "20 января 2025",
-    excerpt: "Nintendo представила новую консоль с поддержкой 4K и улучшенной производительностью.",
-    link: "/news/nintendo-switch-2"
+    excerpt: "CD Projekt RED показала впечатляющую техническую демонстрацию новой части The Witcher на движке Unreal Engine 5.",
+    link: "/news/witcher-4-tech-demo"
   },
   {
     id: 3,
-    title: "GTA VI получила новый трейлер геймплея",
-    image: "https://media.riamo.ru/get_resized/Sk-pjIp3N7ZO5mMLhgnMdmW-AMo=/1920x1080/filters:rs(fill-down):format(webp)/YXJ0aWNsZXMvaW1hZ2UvMjAyNS81L2ltYWdlLnBuZw.webp",
-    date: "15 января 2025",
-    excerpt: "Rockstar Games показала 10 минут геймплея долгожданной GTA VI.",
-    link: "/news/gta-vi-gameplay"
+    title: "Sony сняла региональные ограничения для некоторых игр",
+    image: "https://gmedia.playstation.com/is/image/SIEPDC/ps5-console-white-front-view-01-en-14sep21?$native--t$",
+    date: "18 января 2025",
+    excerpt: "Sony Interactive Entertainment объявила о снятии региональных ограничений для ряда игр в PlayStation Store.",
+    link: "/news/sony-regional-restrictions"
   },
   {
     id: 4,
-    title: "The Elder Scrolls VI показали первый геймплей",
-    image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2623190/67e60b0125feb2f0cc6964f0acb785faf1207fbd/capsule_616x353.jpg?t=1745345472",
-    date: "8 января 2025",
-    excerpt: "Bethesda наконец показала геймплей долгожданной The Elder Scrolls VI.",
-    link: "/news/elder-scrolls-vi"
+    title: "Clair Obscur: Expedition 33 продала миллион копий за три дня",
+    image: "https://cdn.cloudflare.steamstatic.com/steam/apps/2345678/header.jpg",
+    date: "12 января 2025",
+    excerpt: "Французская студия Sandfall Interactive празднует невероятный успех своей дебютной RPG.",
+    link: "/news/clair-obscur-expedition-33-success"
   }
 ];
 
