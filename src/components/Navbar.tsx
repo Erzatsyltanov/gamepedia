@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { PlusCircle } from 'lucide-react';
+import { PlusCircle, Heart, User } from 'lucide-react';
+import SearchBar from './SearchBar';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +16,11 @@ const Navbar = () => {
             GAMEPULSE
           </span>
         </Link>
+
+        {/* Search Bar - Desktop */}
+        <div className="hidden md:block flex-1 max-w-md mx-8">
+          <SearchBar />
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -54,6 +61,12 @@ const Navbar = () => {
           <Link to="/snake" className="text-foreground/80 hover:text-primary transition-colors">
             Игры
           </Link>
+          <Button variant="ghost" size="icon" asChild>
+            <Link to="/favorites">
+              <Heart className="w-5 h-5" />
+            </Link>
+          </Button>
+          <ThemeToggle />
           <Button asChild size="sm" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90">
             <Link to="/submit-article">
               <PlusCircle className="w-4 h-4 mr-2" />
@@ -66,6 +79,9 @@ const Navbar = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-background border-b border-border">
+          <div className="px-4 pt-4 pb-2">
+            <SearchBar onClose={() => setIsMenuOpen(false)} />
+          </div>
           <div className="flex flex-col px-4 pt-2 pb-4 space-y-4">
             <Link to="/news" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
               Новости
@@ -84,6 +100,10 @@ const Navbar = () => {
             </Link>
             <Link to="/snake" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
               Игры
+            </Link>
+            <Link to="/favorites" className="text-foreground hover:text-primary transition-colors py-2 flex items-center" onClick={() => setIsMenuOpen(false)}>
+              <Heart className="w-4 h-4 mr-2" />
+              Избранное
             </Link>
             <Button asChild size="sm" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 w-fit" onClick={() => setIsMenuOpen(false)}>
               <Link to="/submit-article">

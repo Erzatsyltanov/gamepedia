@@ -2,6 +2,10 @@ import { useParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import FavoriteButton from '@/components/FavoriteButton';
+import ShareButton from '@/components/ShareButton';
+import CommentSection from '@/components/CommentSection';
+import RatingSystem from '@/components/RatingSystem';
 
 // Move the franchises array to a separate file for reusability
 const franchises = [
@@ -136,6 +140,16 @@ const FranchiseDetail = () => {
         <div className="container mx-auto px-4">
           <Card>
             <CardContent className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <FavoriteButton 
+                    itemId={franchise.id.toString()} 
+                    itemType="franchise" 
+                    itemTitle={franchise.title} 
+                  />
+                  <ShareButton title={franchise.title} />
+                </div>
+              </div>
               <img
                 src={franchise.image}
                 alt={franchise.title}
@@ -145,6 +159,19 @@ const FranchiseDetail = () => {
               <p className="text-foreground">{franchise.description}</p>
             </CardContent>
           </Card>
+          
+          <div className="mt-8">
+            <RatingSystem 
+              itemId={franchise.id.toString()} 
+              itemType="franchise" 
+              itemTitle={franchise.title} 
+            />
+          </div>
+          
+          <CommentSection 
+            itemId={franchise.id.toString()} 
+            itemType="franchise" 
+          />
         </div>
       </main>
       <Footer />

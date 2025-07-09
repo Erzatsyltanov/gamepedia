@@ -4,6 +4,10 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Gamepad, Star, Book } from 'lucide-react';
+import FavoriteButton from '@/components/FavoriteButton';
+import ShareButton from '@/components/ShareButton';
+import CommentSection from '@/components/CommentSection';
+import RatingSystem from '@/components/RatingSystem';
 
 
 const designersData = [
@@ -232,10 +236,22 @@ const DesignerDetail = () => {
       <main className="flex-grow py-12">
         <div className="container mx-auto px-4">
           <div className="mb-12 border-b border-border pb-6">
+            <div className="flex items-center justify-between">
+              <div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">{designer.name}</h1>
             <p className="text-muted-foreground text-lg max-w-3xl">
               {designer.known_for}
             </p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <FavoriteButton 
+                  itemId={designer.id.toString()} 
+                  itemType="designer" 
+                  itemTitle={designer.name} 
+                />
+                <ShareButton title={designer.name} />
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -307,6 +323,19 @@ const DesignerDetail = () => {
               </Card>
             </div>
           </div>
+          
+          <div className="mt-8">
+            <RatingSystem 
+              itemId={designer.id.toString()} 
+              itemType="designer" 
+              itemTitle={designer.name} 
+            />
+          </div>
+          
+          <CommentSection 
+            itemId={designer.id.toString()} 
+            itemType="designer" 
+          />
         </div>
       </main>
 

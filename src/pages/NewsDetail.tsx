@@ -5,6 +5,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import FavoriteButton from '@/components/FavoriteButton';
+import ShareButton from '@/components/ShareButton';
+import CommentSection from '@/components/CommentSection';
 
 const newsData = [
   {
@@ -351,6 +354,14 @@ const NewsDetail = () => {
                       <User className="w-4 h-4 mr-2" />
                       {article.author}
                     </div>
+                    <div className="flex items-center space-x-2">
+                      <FavoriteButton 
+                        itemId={article.id.toString()} 
+                        itemType="news" 
+                        itemTitle={article.title} 
+                      />
+                      <ShareButton title={article.title} />
+                    </div>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-6">
@@ -412,6 +423,11 @@ const NewsDetail = () => {
                 </div>
               </CardContent>
             </Card>
+            
+            <CommentSection 
+              itemId={article.id.toString()} 
+              itemType="news" 
+            />
           </article>
 
           {/* Related Articles */}

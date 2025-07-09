@@ -2,6 +2,10 @@ import { useParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import FavoriteButton from '@/components/FavoriteButton';
+import ShareButton from '@/components/ShareButton';
+import CommentSection from '@/components/CommentSection';
+import RatingSystem from '@/components/RatingSystem';
 
 const characters = [
     {
@@ -126,12 +130,35 @@ const CharacterDetail = () => {
           <div className="container mx-auto px-4">
             <Card>
               <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-2">
+                    <FavoriteButton 
+                      itemId={character.id.toString()} 
+                      itemType="character" 
+                      itemTitle={character.name} 
+                    />
+                    <ShareButton title={character.name} />
+                  </div>
+                </div>
                 <img src={character.image} alt={character.name} className="w-full h-64 object-cover mb-4" />
                 <h1 className="text-3xl font-bold mb-2">{character.name}</h1>
                 <p className="text-lg text-muted-foreground mb-4">{character.game}</p>
                 <p className="text-foreground">{character.description}</p>
               </CardContent>
             </Card>
+            
+            <div className="mt-8">
+              <RatingSystem 
+                itemId={character.id.toString()} 
+                itemType="character" 
+                itemTitle={character.name} 
+              />
+            </div>
+            
+            <CommentSection 
+              itemId={character.id.toString()} 
+              itemType="character" 
+            />
           </div>
         </main>
         <Footer />
