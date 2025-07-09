@@ -53,10 +53,10 @@ const latestNews: NewsItem[] = [
 ];
 
 const stats = [
-  { icon: Gamepad2, label: "Игровых франшиз", value: "15+" },
-  { icon: Users, label: "Персонажей", value: "50+" },
-  { icon: BookOpen, label: "Статей", value: "200+" },
-  { icon: Trophy, label: "Геймдизайнеров", value: "10+" }
+  { icon: Gamepad2, label: "Игровых франшиз", value: "25+" },
+  { icon: Users, label: "Персонажей", value: "75+" },
+  { icon: BookOpen, label: "Статей", value: "500+" },
+  { icon: Trophy, label: "Геймдизайнеров", value: "15+" }
 ];
 
 const Index: React.FC = () => {

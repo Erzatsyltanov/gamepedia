@@ -111,6 +111,82 @@ const characters = [
   }
 ];
 
+// Добавляем больше персонажей
+const additionalCharacters = [
+  {
+    id: 16,
+    name: "Элли",
+    game: "The Last of Us",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Ellie_TLOU.jpg/220px-Ellie_TLOU.jpg",
+    description: "Главная героиня The Last of Us, иммунная к инфекции кордицепса девочка-подросток."
+  },
+  {
+    id: 17,
+    name: "Джоэл Миллер",
+    game: "The Last of Us",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Joel_Miller_TLOU.jpg/220px-Joel_Miller_TLOU.jpg",
+    description: "Контрабандист и выживший в постапокалиптическом мире, ставший отцовской фигурой для Элли."
+  },
+  {
+    id: 18,
+    name: "Артур Морган",
+    game: "Red Dead Redemption 2",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Arthur_Morgan_RDR2.jpg/220px-Arthur_Morgan_RDR2.jpg",
+    description: "Главный герой RDR2, член банды Ван дер Линде и правая рука Датча."
+  },
+  {
+    id: 19,
+    name: "Джон Марстон",
+    game: "Red Dead Redemption",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d4/John_Marston_RDR.jpg/220px-John_Marston_RDR.jpg",
+    description: "Бывший бандит, пытающийся начать новую жизнь со своей семьей."
+  },
+  {
+    id: 20,
+    name: "Геральт из Ривии",
+    game: "The Witcher",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Geralt_of_Rivia.jpg/220px-Geralt_of_Rivia.jpg",
+    description: "Ведьмак из школы Волка, охотник на монстров с белыми волосами и кошачьими глазами."
+  },
+  {
+    id: 21,
+    name: "Цири",
+    game: "The Witcher 3",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/Ciri_Witcher_3.jpg/220px-Ciri_Witcher_3.jpg",
+    description: "Принцесса Цинтры с магическими способностями, приемная дочь Геральта."
+  },
+  {
+    id: 22,
+    name: "Трисс Меригольд",
+    game: "The Witcher",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/Triss_Merigold.jpg/220px-Triss_Merigold.jpg",
+    description: "Чародейка и близкий друг Геральта, член Ложи Чародеек."
+  },
+  {
+    id: 23,
+    name: "Йеннифэр из Венгерберга",
+    game: "The Witcher",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Yennefer_Witcher_3.jpg/220px-Yennefer_Witcher_3.jpg",
+    description: "Могущественная чародейка и возлюбленная Геральта, связанная с ним судьбой."
+  },
+  {
+    id: 24,
+    name: "Алой",
+    game: "Horizon",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Aloy_Horizon.jpg/220px-Aloy_Horizon.jpg",
+    description: "Охотница из племени Нора в постапокалиптическом мире, населенном роботами-динозаврами."
+  },
+  {
+    id: 25,
+    name: "Натан Дрейк",
+    game: "Uncharted",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Nathan_Drake_Uncharted.jpg/220px-Nathan_Drake_Uncharted.jpg",
+    description: "Охотник за сокровищами и авантюрист, потомок знаменитого пирата Фрэнсиса Дрейка."
+  }
+];
+
+const allCharacters = [...characters, ...additionalCharacters];
+
 const Characters = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -124,7 +200,7 @@ const Characters = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {characters.map(character => (
+            {allCharacters.map(character => (
               <Link to={`/characters/${character.id}`} key={character.id} className="block group">
                 <Card className="overflow-hidden transition-all border-border hover:shadow-md hover:shadow-primary/20 hover:border-primary/50">
                   <div className="aspect-square overflow-hidden bg-secondary/50">

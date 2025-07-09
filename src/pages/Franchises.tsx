@@ -110,6 +110,69 @@ const franchises = [
     link: "/franchises/forza"
   }
 ];
+
+// Добавляем больше франшиз
+const additionalFranchises = [
+  {
+    id: 16,
+    title: "Dark Souls",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Dark_Souls_cover_art.jpg/220px-Dark_Souls_cover_art.jpg",
+    description: "Серия сложных action-RPG от FromSoftware, известная своей высокой сложностью и атмосферным миром.",
+    link: "/franchises/dark-souls"
+  },
+  {
+    id: 17,
+    title: "God of War",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e0/God_of_War_4_cover.jpg/220px-God_of_War_4_cover.jpg",
+    description: "Эпическая серия экшенов о Кратосе, бывшем спартанском воине, ставшем богом войны.",
+    link: "/franchises/god-of-war"
+  },
+  {
+    id: 18,
+    title: "Mortal Kombat",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/d/d5/Mortal_Kombat_11_cover_art.png/220px-Mortal_Kombat_11_cover_art.png",
+    description: "Культовая серия файтингов, известная своими жестокими добиваниями и уникальными персонажами.",
+    link: "/franchises/mortal-kombat"
+  },
+  {
+    id: 19,
+    title: "Street Fighter",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b0/Street_Fighter_6_cover_art.jpg/220px-Street_Fighter_6_cover_art.jpg",
+    description: "Легендарная серия файтингов от Capcom, определившая стандарты жанра.",
+    link: "/franchises/street-fighter"
+  },
+  {
+    id: 20,
+    title: "Tekken",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/1/19/Tekken_8_cover_art.jpg/220px-Tekken_8_cover_art.jpg",
+    description: "3D-файтинг от Bandai Namco с глубокой боевой системой и семейной сагой Мисимы.",
+    link: "/franchises/tekken"
+  },
+  {
+    id: 21,
+    title: "Overwatch",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Overwatch_cover_art.jpg/220px-Overwatch_cover_art.jpg",
+    description: "Командный шутер от Blizzard с уникальными героями и их способностями.",
+    link: "/franchises/overwatch"
+  },
+  {
+    id: 22,
+    title: "Apex Legends",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Apex_legends_cover.jpg/220px-Apex_legends_cover.jpg",
+    description: "Battle royale от Respawn Entertainment во вселенной Titanfall.",
+    link: "/franchises/apex-legends"
+  },
+  {
+    id: 23,
+    title: "Valorant",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Valorant_logo.svg/1200px-Valorant_logo.svg.png",
+    description: "Тактический шутер от Riot Games с уникальными агентами и способностями.",
+    link: "/franchises/valorant"
+  }
+];
+
+const allFranchises = [...franchises, ...additionalFranchises];
+
 const Franchises = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -123,7 +186,7 @@ const Franchises = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {franchises.map(franchise => (
+            {allFranchises.map(franchise => (
               <GameCard
                 key={franchise.id}
                 title={franchise.title}

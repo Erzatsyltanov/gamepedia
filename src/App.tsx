@@ -18,6 +18,10 @@ import CharacterDetail from "./pages/CharacterDetail";
 import FranchiseDetail from "./pages/FranchiseDetail";
 import SubmitArticle from "./pages/SubmitArticle";
 import Favorites from "./pages/Favorites";
+import GameGuides from "./pages/GameGuides";
+import GameReviews from "./pages/GameReviews";
+import GameHistory from "./pages/GameHistory";
+import Esports from "./pages/Esports";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +46,10 @@ const App = () => (
             <Route path="/snake" element={<SnakeGame />} />
             <Route path="/submit-article" element={<SubmitArticle />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/guides" element={<GameGuides />} />
+            <Route path="/reviews" element={<GameReviews />} />
+            <Route path="/history" element={<GameHistory />} />
+            <Route path="/esports" element={<Esports />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

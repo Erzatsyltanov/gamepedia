@@ -61,6 +61,18 @@ const Navbar = () => {
           <Link to="/snake" className="text-foreground/80 hover:text-primary transition-colors">
             Игры
           </Link>
+          <Link to="/guides" className="text-foreground/80 hover:text-primary transition-colors">
+            Гайды
+          </Link>
+          <Link to="/reviews" className="text-foreground/80 hover:text-primary transition-colors">
+            Обзоры
+          </Link>
+          <Link to="/history" className="text-foreground/80 hover:text-primary transition-colors">
+            История
+          </Link>
+          <Link to="/esports" className="text-foreground/80 hover:text-primary transition-colors">
+            Киберспорт
+          </Link>
           <Button variant="ghost" size="icon" asChild>
             <Link to="/favorites">
               <Heart className="w-5 h-5" />
@@ -100,6 +112,18 @@ const Navbar = () => {
             </Link>
             <Link to="/snake" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
               Игры
+            </Link>
+            <Link to="/guides" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Гайды
+            </Link>
+            <Link to="/reviews" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Обзоры
+            </Link>
+            <Link to="/history" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              История
+            </Link>
+            <Link to="/esports" className="text-foreground hover:text-primary transition-colors py-2" onClick={() => setIsMenuOpen(false)}>
+              Киберспорт
             </Link>
             <Link to="/favorites" className="text-foreground hover:text-primary transition-colors py-2 flex items-center" onClick={() => setIsMenuOpen(false)}>
               <Heart className="w-4 h-4 mr-2" />
