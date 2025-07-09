@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import NewsCard from '@/components/NewsCard';
-import { Gamepad2, Users, TrendingUp, Star, ArrowRight, Play, BookOpen, Trophy } from 'lucide-react';
+import { Gamepad2, Users, TrendingUp, Star, ArrowRight, Play, BookOpen, Trophy, Zap, Award, Globe } from 'lucide-react';
 
 interface NewsItem {
   id: number;
@@ -67,7 +67,11 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-20 md:py-32">
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-transparent to-blue-500/10"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+          </div>
           <div className="container mx-auto px-4 relative">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
@@ -90,13 +94,13 @@ const Index: React.FC = () => {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 text-white">
+                  <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all">
                     <Link to="/franchises">
                       <Gamepad2 className="w-5 h-5 mr-2" />
                       Исследовать игры
                     </Link>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button asChild variant="outline" size="lg" className="border-2 hover:bg-primary/5">
                     <Link to="/submit-article">
                       <BookOpen className="w-5 h-5 mr-2" />
                       Добавить статью
@@ -107,11 +111,11 @@ const Index: React.FC = () => {
                 {/* Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
                   {stats.map((stat, index) => (
-                    <div key={index} className="text-center">
-                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-2">
+                    <div key={index} className="text-center group">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-2 group-hover:bg-primary/20 transition-colors">
                         <stat.icon className="w-6 h-6" />
                       </div>
-                      <div className="text-2xl font-bold text-foreground">{stat.value}</div>
+                      <div className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">{stat.value}</div>
                       <div className="text-sm text-muted-foreground">{stat.label}</div>
                     </div>
                   ))}
@@ -119,10 +123,10 @@ const Index: React.FC = () => {
               </div>
 
               <div className="relative">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl border border-border bg-gradient-to-br from-purple-900/20 to-blue-900/20 p-8">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl border border-border bg-gradient-to-br from-purple-900/20 to-blue-900/20 p-8 hover:shadow-3xl transition-shadow">
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-full">
                     {['Final Fantasy', 'Zelda', 'Mario', 'Sonic', 'Halo', 'GTA'].map((game, i) => (
-                      <div key={i} className="bg-background/40 backdrop-blur-sm rounded-lg p-4 flex items-center justify-center text-center text-sm font-medium hover:bg-primary/20 transition-colors cursor-pointer">
+                      <div key={i} className="bg-background/40 backdrop-blur-sm rounded-lg p-4 flex items-center justify-center text-center text-sm font-medium hover:bg-primary/20 transition-all cursor-pointer hover:scale-105">
                         {game}
                       </div>
                     ))}
@@ -174,6 +178,54 @@ const Index: React.FC = () => {
         {/* Community Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
+            {/* New Features Section */}
+            <div className="mb-16">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Новые возможности</h2>
+                <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                  Откройте для себя улучшенный GamePulse с новыми функциями для лучшего игрового опыта
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <Card className="text-center p-6 hover:shadow-lg transition-all hover:scale-105">
+                  <CardContent className="space-y-4">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
+                      <Zap className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Быстрый поиск</h3>
+                    <p className="text-muted-foreground">
+                      Мгновенно находите игры, персонажей и статьи с помощью умного поиска
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center p-6 hover:shadow-lg transition-all hover:scale-105">
+                  <CardContent className="space-y-4">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center">
+                      <Award className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Система рейтингов</h3>
+                    <p className="text-muted-foreground">
+                      Оценивайте игры и персонажей, делитесь мнением с сообществом
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="text-center p-6 hover:shadow-lg transition-all hover:scale-105">
+                  <CardContent className="space-y-4">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center">
+                      <Globe className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold">Социальные функции</h3>
+                    <p className="text-muted-foreground">
+                      Комментируйте, делитесь и добавляйте в избранное любимый контент
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+            
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Присоединяйтесь к сообществу</h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -183,7 +235,7 @@ const Index: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+              <Card className="text-center p-8 hover:shadow-lg transition-all hover:scale-105">
                 <CardContent className="space-y-4">
                   <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
                     <BookOpen className="w-8 h-8 text-white" />
@@ -198,7 +250,7 @@ const Index: React.FC = () => {
                 </CardContent>
               </Card>
 
-              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+              <Card className="text-center p-8 hover:shadow-lg transition-all hover:scale-105">
                 <CardContent className="space-y-4">
                   <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center">
                     <Users className="w-8 h-8 text-white" />
@@ -213,7 +265,7 @@ const Index: React.FC = () => {
                 </CardContent>
               </Card>
 
-              <Card className="text-center p-8 hover:shadow-lg transition-shadow">
+              <Card className="text-center p-8 hover:shadow-lg transition-all hover:scale-105">
                 <CardContent className="space-y-4">
                   <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center">
                     <TrendingUp className="w-8 h-8 text-white" />
@@ -242,13 +294,13 @@ const Index: React.FC = () => {
                 Откройте для себя удивительный мир видеоигр вместе с нами
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90">
+                <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-blue-500 hover:opacity-90 shadow-lg hover:shadow-xl transition-all">
                   <Link to="/franchises">
                     <Play className="w-5 h-5 mr-2" />
                     Начать исследование
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button asChild variant="outline" size="lg" className="border-2 hover:bg-primary/5">
                   <Link to="/about">Узнать больше</Link>
                 </Button>
               </div>
