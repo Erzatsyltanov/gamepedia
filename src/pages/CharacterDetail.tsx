@@ -54,7 +54,7 @@ const characters = [
       id: 7,
       name: "Кратос",
       game: "God of War",
-      image: "https://avatars.mds.yandex.net/i?id=53cea966497485bc00f6318b4f0188c8c41d10d1-9855166-images-thumbs&n=13",
+      image: "https://avatars.mds.yandex.net/i?id=53cea966497485bc00f6318b8f0188c8c41d10d1-9855166-images-thumbs&n=13",
       description: "Бывший спартанский воин, ставший богом войны и впоследствии переселившийся в миры скандинавской мифологии."
     },
     {
