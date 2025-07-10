@@ -185,7 +185,102 @@ const additionalCharacters = [
   }
 ];
 
-const allCharacters = [...characters, ...additionalCharacters];
+// Добавляем новых персонажей
+const newCharacters = [
+  {
+    id: 26,
+    name: "Ада Вонг",
+    game: "Resident Evil",
+    image: "https://static.wikia.nocookie.net/residentevil/images/f/f5/Ada_Wong_RE4R.jpg/revision/latest?cb=20230324174500",
+    description: "Загадочная шпионка и биохимик, работающая на различные организации. Известна своими красными платьями и сложными отношениями с Леоном Кеннеди."
+  },
+  {
+    id: 27,
+    name: "Гордон Фримен",
+    game: "Half-Life",
+    image: "https://static.wikia.nocookie.net/half-life/images/f/f7/Gordon_Freeman_bust_rtb.jpg/revision/latest?cb=20100327174206&path-prefix=en",
+    description: "Теоретический физик из исследовательского центра Блэк Меса, ставший героем сопротивления против инопланетного вторжения Альянса."
+  },
+  {
+    id: 28,
+    name: "Элой",
+    game: "Horizon",
+    image: "https://static.wikia.nocookie.net/horizonzerodawn/images/a/a8/Aloy_-_Horizon_Forbidden_West.png/revision/latest?cb=20210602164303",
+    description: "Охотница из племени Нора в постапокалиптическом мире, населенном роботами-динозаврами. Обладает уникальной способностью взаимодействовать с древними технологиями."
+  },
+  {
+    id: 29,
+    name: "Эцио Аудиторе",
+    game: "Assassin's Creed",
+    image: "https://static.wikia.nocookie.net/assassinscreed/images/e/e0/ACB_Ezio.png/revision/latest?cb=20101112001919",
+    description: "Итальянский дворянин эпохи Возрождения, ставший Мастером Ассасином. Один из самых харизматичных и популярных героев серии Assassin's Creed."
+  },
+  {
+    id: 30,
+    name: "Ваас Монтенегро",
+    game: "Far Cry 3",
+    image: "https://static.wikia.nocookie.net/farcry/images/9/9a/Vaas_Montenegro.jpg/revision/latest?cb=20120605174928",
+    description: "Безумный пиратский лидер с острова Рук, известный своими философскими монологами о безумии и определением инсанити."
+  },
+  {
+    id: 31,
+    name: "Пейган Мин",
+    game: "Far Cry 4",
+    image: "https://static.wikia.nocookie.net/farcry/images/f/f0/Pagan_Min_FC4.jpg/revision/latest?cb=20140815164028",
+    description: "Эксцентричный и жестокий диктатор вымышленной страны Кират, известный своим розовым костюмом и непредсказуемым поведением."
+  },
+  {
+    id: 32,
+    name: "GLaDOS",
+    game: "Portal",
+    image: "https://static.wikia.nocookie.net/half-life/images/4/4f/GLaDOS_P2_infobox.png/revision/latest?cb=20110421021235&path-prefix=en",
+    description: "Искусственный интеллект научного комплекса Aperture Science, известная своим саркастическим юмором и смертельными экспериментами с порталами."
+  },
+  {
+    id: 33,
+    name: "Томми Версетти",
+    game: "Grand Theft Auto: Vice City",
+    image: "https://static.wikia.nocookie.net/gtawiki/images/c/c6/TommyVercetti-GTAVC.jpg/revision/latest?cb=20100914165806",
+    description: "Бывший член мафии, прибывший в Вайс-Сити в 1986 году. Построил криминальную империю в неоновом городе, вдохновленном Майами 80-х."
+  },
+  {
+    id: 34,
+    name: "Карл 'CJ' Джонсон",
+    game: "Grand Theft Auto: San Andreas",
+    image: "https://static.wikia.nocookie.net/gtawiki/images/4/4f/CarlJohnson-GTASA.jpg/revision/latest?cb=20100914165805",
+    description: "Член банды Grove Street Families, вернувшийся в Лос-Сантос после смерти матери. Борется за восстановление своей банды и семьи."
+  },
+  {
+    id: 35,
+    name: "Нико Беллик",
+    game: "Grand Theft Auto IV",
+    image: "https://static.wikia.nocookie.net/gtawiki/images/f/f8/NikoBellic-GTAIV.jpg/revision/latest?cb=20100914165807",
+    description: "Сербский иммигрант, прибывший в Либерти-Сити в поисках американской мечты, но втянутый в мир организованной преступности."
+  },
+  {
+    id: 36,
+    name: "Майкл Де Санта",
+    game: "Grand Theft Auto V",
+    image: "https://static.wikia.nocookie.net/gtawiki/images/8/8c/Michael-GTAV.jpg/revision/latest?cb=20130902175050",
+    description: "Бывший грабитель банков, живущий под программой защиты свидетелей в Лос-Сантосе. Один из трех играбельных персонажей GTA V."
+  },
+  {
+    id: 37,
+    name: "Франклин Клинтон",
+    game: "Grand Theft Auto V",
+    image: "https://static.wikia.nocookie.net/gtawiki/images/d/dc/Franklin-GTAV.jpg/revision/latest?cb=20130902175049",
+    description: "Молодой гангстер из Южного Лос-Сантоса, стремящийся вырваться из гетто и стать успешным преступником."
+  },
+  {
+    id: 38,
+    name: "Тревор Филипс",
+    game: "Grand Theft Auto V",
+    image: "https://static.wikia.nocookie.net/gtawiki/images/0/0c/Trevor-GTAV.jpg/revision/latest?cb=20130902175051",
+    description: "Психопатичный преступник и наркоторговец, живущий в пустыне Блейн Каунти. Известен своим непредсказуемым и агрессивным поведением."
+  }
+];
+
+const allCharacters = [...characters, ...additionalCharacters, ...newCharacters];
 
 const Characters = () => {
   return (
