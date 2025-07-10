@@ -280,7 +280,81 @@ const newCharacters = [
   }
 ];
 
-const allCharacters = [...characters, ...additionalCharacters, ...newCharacters];
+// Добавляем персонажей из NieR и Devil May Cry
+const nierDmcCharacters = [
+  {
+    id: 39,
+    name: "Кайне",
+    game: "NieR Replicant",
+    image: "https://static.wikia.nocookie.net/nier/images/f/f0/Kaine_Replicant.png/revision/latest?cb=20210423174506",
+    description: "Воинственная девушка-гермафродит с грубым характером и добрым сердцем. Одержима Тенью и сражается двумя мечами, защищая своих друзей."
+  },
+  {
+    id: 40,
+    name: "Эмиль",
+    game: "NieR Replicant",
+    image: "https://static.wikia.nocookie.net/nier/images/8/8c/Emil_Replicant.png/revision/latest?cb=20210423174507",
+    description: "Добрый мальчик с проклятыми глазами, превращающими людей в камень. Жертвует собой ради друзей и становится бессмертным скелетом."
+  },
+  {
+    id: 41,
+    name: "A2",
+    game: "NieR: Automata",
+    image: "https://static.wikia.nocookie.net/nier/images/a/a4/A2_Automata.png/revision/latest?cb=20170223174506",
+    description: "Боевой андроид YoRHa типа A (Attacker), дезертир с длинными белыми волосами. Выжившая из отряда, уничтоженного в предыдущей миссии."
+  },
+  {
+    id: 42,
+    name: "9S",
+    game: "NieR: Automata",
+    image: "https://static.wikia.nocookie.net/nier/images/f/f4/9S_Automata.png/revision/latest?cb=20170223174507",
+    description: "Андроид-разведчик YoRHa типа S (Scanner) с любознательным характером. Партнер 2B, обладающий способностями к хакингу и анализу."
+  },
+  {
+    id: 43,
+    name: "Данте",
+    game: "Devil May Cry",
+    image: "https://static.wikia.nocookie.net/devilmaycry/images/f/f0/Dante_DMC5.png/revision/latest?cb=20190308174506",
+    description: "Полудемон, сын легендарного Спарды. Охотник на демонов с белыми волосами, владеющий мечом Rebellion и пистолетами Ebony & Ivory."
+  },
+  {
+    id: 44,
+    name: "Вергилий",
+    game: "Devil May Cry",
+    image: "https://static.wikia.nocookie.net/devilmaycry/images/e/e4/Vergil_DMC5.png/revision/latest?cb=20191120174507",
+    description: "Старший брат-близнец Данте, одержимый силой. Владеет катаной Ямато и стремится превзойти своего отца Спарду любой ценой."
+  },
+  {
+    id: 45,
+    name: "Леди",
+    game: "Devil May Cry 3",
+    image: "https://static.wikia.nocookie.net/devilmaycry/images/c/c4/Lady_DMC5.png/revision/latest?cb=20190308174508",
+    description: "Охотница на демонов-человек, дочь Аркхема. Использует огнестрельное оружие, включая ракетную установку Kalina Ann, в борьбе с демонами."
+  },
+  {
+    id: 46,
+    name: "Триш",
+    game: "Devil May Cry",
+    image: "https://static.wikia.nocookie.net/devilmaycry/images/b/b4/Trish_DMC5.png/revision/latest?cb=20190308174509",
+    description: "Демон, созданный Мундусом по образу матери Данте. Позже становится союзником и партнером Данте в агентстве Devil May Cry."
+  },
+  {
+    id: 47,
+    name: "Нико",
+    game: "Devil May Cry 5",
+    image: "https://static.wikia.nocookie.net/devilmaycry/images/d/d8/Nico_DMC5.png/revision/latest?cb=20190308174510",
+    description: "Талантливый оружейник и механик, внучка создателя Ebony & Ivory. Создает Devil Breakers для Неро и водит фургон с оружием."
+  },
+  {
+    id: 48,
+    name: "Неро",
+    game: "Devil May Cry 4",
+    image: "https://static.wikia.nocookie.net/devilmaycry/images/a/a8/Nero_DMC5.png/revision/latest?cb=20190308174511",
+    description: "Молодой охотник на демонов с демонической рукой Devil Bringer. Сын Вергилия, владеет мечом Red Queen и пистолетом Blue Rose."
+  }
+];
+
+const allCharacters = [...characters, ...additionalCharacters, ...newCharacters, ...nierDmcCharacters];
 
 const Characters = () => {
   return (
