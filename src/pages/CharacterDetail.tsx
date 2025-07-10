@@ -112,6 +112,76 @@ const characters = [
       game: "Resident Evil",
       image: "https://avatars.mds.yandex.net/i?id=71ed63ef87b97bf49b84a84ffa7e5a92997ce546-5256069-images-thumbs&n=13",
       description: "Бывший член S.T.A.R.S., а впоследствии основатель и член BSAA, борец с биотерроризмом."
+    },
+    {
+      id: 39,
+      name: "Кайне",
+      game: "NieR Replicant",
+      image: "https://static.wikia.nocookie.net/nier/images/f/f0/Kaine_Replicant.png/revision/latest?cb=20210423174506",
+      description: "Воинственная девушка-гермафродит с грубым характером и добрым сердцем. Одержима Тенью и сражается двумя мечами, защищая своих друзей от Теней. Несмотря на грубую речь и агрессивное поведение, глубоко заботится о Нире и Эмиле. Её трагическая история связана с бабушкой и проклятием Тени."
+    },
+    {
+      id: 40,
+      name: "Эмиль",
+      game: "NieR Replicant",
+      image: "https://static.wikia.nocookie.net/nier/images/8/8c/Emil_Replicant.png/revision/latest?cb=20210423174507",
+      description: "Добрый и застенчивый мальчик с проклятыми глазами, которые превращают людей в камень. Живет в особняке со своей сестрой Халуа. В ходе истории жертвует своим человеческим обликом, чтобы защитить друзей, и становится бессмертным скелетом. Один из самых трагических персонажей серии NieR."
+    },
+    {
+      id: 41,
+      name: "A2",
+      game: "NieR: Automata",
+      image: "https://static.wikia.nocookie.net/nier/images/a/a4/A2_Automata.png/revision/latest?cb=20170223174506",
+      description: "Боевой андроид YoRHa типа A (Attacker) с серийным номером YoRHa Type A No.2. Дезертир с длинными белыми волосами и холодным характером. Единственная выжившая из отряда, уничтоженного в предыдущей миссии на Земле. Обладает глубокими знаниями о истинной природе войны между андроидами и машинами."
+    },
+    {
+      id: 42,
+      name: "9S",
+      game: "NieR: Automata",
+      image: "https://static.wikia.nocookie.net/nier/images/f/f4/9S_Automata.png/revision/latest?cb=20170223174507",
+      description: "Андроид-разведчик YoRHa типа S (Scanner) с серийным номером YoRHa No.9 Type S. Любознательный и эмоциональный андроид, партнер 2B. Обладает уникальными способностями к хакингу и анализу машин. Его любопытство часто приводит к открытию неприятных истин о мире и YoRHa."
+    },
+    {
+      id: 43,
+      name: "Данте",
+      game: "Devil May Cry",
+      image: "https://static.wikia.nocookie.net/devilmaycry/images/f/f0/Dante_DMC5.png/revision/latest?cb=20190308174506",
+      description: "Полудемон, сын легендарного Тёмного Рыцаря Спарды и человеческой женщины Евы. Профессиональный охотник на демонов с белыми волосами и красным пальто. Владеет мечом Rebellion (позже Dante) и знаменитыми пистолетами Ebony & Ivory. Известен своим саркастическим юмором и любовью к пицце и клубнике."
+    },
+    {
+      id: 44,
+      name: "Вергилий",
+      game: "Devil May Cry",
+      image: "https://static.wikia.nocookie.net/devilmaycry/images/e/e4/Vergil_DMC5.png/revision/latest?cb=20191120174507",
+      description: "Старший брат-близнец Данте, также сын Спарды. В отличие от брата, одержим обретением силы и превосходством над отцом. Владеет легендарной катаной Ямато, способной разрезать пространство. Элегантен, хладнокровен и безжалостен в достижении своих целей. Отец Неро."
+    },
+    {
+      id: 45,
+      name: "Леди",
+      game: "Devil May Cry 3",
+      image: "https://static.wikia.nocookie.net/devilmaycry/images/c/c4/Lady_DMC5.png/revision/latest?cb=20190308174508",
+      description: "Мэри 'Леди' - охотница на демонов-человек, дочь Аркхема. Мотивирована местью отцу за убийство матери и открытие врат в демонический мир. Специализируется на огнестрельном оружии, включая ракетную установку Kalina Ann. Позже становится партнером Данте в охоте на демонов."
+    },
+    {
+      id: 46,
+      name: "Триш",
+      game: "Devil May Cry",
+      image: "https://static.wikia.nocookie.net/devilmaycry/images/b/b4/Trish_DMC5.png/revision/latest?cb=20190308174509",
+      description: "Демон, созданный императором демонов Мундусом по образу матери Данте, Евы. Изначально была послана убить Данте, но позже предала Мундуса и стала союзником. Обладает способностью управлять молниями и работает партнером в агентстве Devil May Cry."
+    },
+    {
+      id: 47,
+      name: "Нико",
+      game: "Devil May Cry 5",
+      image: "https://static.wikia.nocookie.net/devilmaycry/images/d/d8/Nico_DMC5.png/revision/latest?cb=20190308174510",
+      description: "Николетта 'Нико' Голдштейн - талантливый оружейник и механик, внучка Нелл Голдштейн, создательницы пистолетов Ebony & Ivory. Создает протезы Devil Breaker для Неро и водит фургон, полный оружия. Курящая, энергичная девушка с южным акцентом и страстью к созданию оружия."
+    },
+    {
+      id: 48,
+      name: "Неро",
+      game: "Devil May Cry 4",
+      image: "https://static.wikia.nocookie.net/devilmaycry/images/a/a8/Nero_DMC5.png/revision/latest?cb=20190308174511",
+      description: "Молодой охотник на демонов и сын Вергилия. Обладал демонической рукой Devil Bringer, которую потерял, но теперь использует механические протезы Devil Breaker. Владеет мечом Red Queen с системой превышения оборотов и пистолетом Blue Rose. Влюблен в Кири и защищает город Фортуна."
     }
   ];
 
